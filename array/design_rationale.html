@@ -1,0 +1,98 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Design Rationale</title>
+<link rel="stylesheet" href=".././doc/src/boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="Chapter 1. Boost.Array">
+<link rel="up" href="../index.html" title="Chapter 1. Boost.Array">
+<link rel="prev" href="introduction.html" title="Introduction">
+<link rel="next" href="more_information.html" title="More information">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%"><tr>
+<td valign="top"><img alt="Boost C++ Libraries" width="277" height="86" src=".././boost.png"></td>
+<td align="center"><a href="../../../../../index.html">Home</a></td>
+<td align="center"><a href="../../../../../libs/libraries.htm">Libraries</a></td>
+<td align="center"><a href="http://www.boost.org/users/people.html">People</a></td>
+<td align="center"><a href="http://www.boost.org/users/faq.html">FAQ</a></td>
+<td align="center"><a href="../../../../../more/index.htm">More</a></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="introduction.html"><img src=".././doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src=".././doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src=".././doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="more_information.html"><img src=".././doc/src/images/next.png" alt="Next"></a>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="array.design_rationale"></a><a name="sec:rationale"></a><a class="link" href="design_rationale.html" title="Design Rationale">Design
+    Rationale</a>
+</h2></div></div></div>
+<p>
+      There was an important design tradeoff regarding the constructors: We could
+      implement array as an "aggregate" (see Section 8.5.1, [dcl.init.aggr],
+      of the C++ Standard). This would mean:
+    </p>
+<p>
+      <span class="quote">“<span class="quote">An array can be initialized with a brace-enclosing, comma-separated
+      list of initializers for the elements of the container, written in increasing
+      subscript order:</span>”</span>
+    </p>
+<pre class="programlisting"><a class="link" href="ref/boost__array.html"><code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">array</span></code></a><span class="special">&lt;</span><span class="keyword">int</span><span class="special">,</span><span class="number">4</span><span class="special">&gt;</span> <span class="identifier">a</span> <span class="special">=</span> <span class="special">{</span> <span class="special">{</span> <span class="number">1</span><span class="special">,</span> <span class="number">2</span><span class="special">,</span> <span class="number">3</span> <span class="special">}</span> <span class="special">};</span>
+</pre>
+<p>
+      Note that if there are fewer elements in the initializer list, then each remaining
+      element gets default-initialized. Thus, it has a defined value.
+    </p>
+<p>
+      However, this approach has its drawbacks: <span class="bold"><strong>passing no
+      initializer list means that the elements have an indeterminate initial value</strong></span>,
+      because the rule says that aggregates may have:
+    </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+          No user-declared constructors.
+        </li>
+<li class="listitem">
+          No private or protected non-static data members.
+        </li>
+<li class="listitem">
+          No base classes.
+        </li>
+<li class="listitem">
+          No virtual functions.
+        </li>
+</ul></div>
+<p>
+      Nevertheless, the current implementation uses this approach.
+    </p>
+<p>
+      Note that for standard conforming compilers it is possible to use fewer braces
+      (according to 8.5.1 (11) of the Standard). That is, you can initialize an array
+      as follows:
+    </p>
+<pre class="programlisting"><a class="link" href="ref/boost__array.html"><code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">array</span></code></a><span class="special">&lt;</span><span class="keyword">int</span><span class="special">,</span><span class="number">4</span><span class="special">&gt;</span> <span class="identifier">a</span> <span class="special">=</span> <span class="special">{</span> <span class="number">1</span><span class="special">,</span> <span class="number">2</span><span class="special">,</span> <span class="number">3</span> <span class="special">};</span>
+</pre>
+<p>
+      I would appreciate any constructive feedback. <span class="bold"><strong>Please
+      note: I do not have time to read all boost mails. Thus, to make sure that feedback
+      arrives to me, please send me a copy of each mail regarding this class.</strong></span>
+    </p>
+<p>
+      The code is provided "as is" without expressed or implied warranty.
+    </p>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><div class="copyright-footer">Copyright © 2001-2004 Nicolai
+      Josuttis<br>Copyright © 2012 Marshall Clow<p>
+        Distributed under the Boost Software License, Version 1.0. (See accompanying
+        file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt" target="_top">http://www.boost.org/LICENSE_1_0.txt</a>)
+      </p>
+</div></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="introduction.html"><img src=".././doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src=".././doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src=".././doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="more_information.html"><img src=".././doc/src/images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

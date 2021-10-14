@@ -1,0 +1,622 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<link rel="stylesheet" href="../.././doc/src/boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../../index.html" title="Chapter 1. Boost.Array">
+<link rel="up" href="../ref.html" title="This Page Intentionally Left Blank 2/2">
+<link rel="prev" href="../ref.html" title="This Page Intentionally Left Blank 2/2">
+<link rel="next" href="boost__array/value_type.html" title="value_type">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%"><tr>
+<td valign="top"><img alt="Boost C++ Libraries" width="277" height="86" src="../.././boost.png"></td>
+<td align="center"><a href="../../../../../../index.html">Home</a></td>
+<td align="center"><a href="../../../../../../libs/libraries.htm">Libraries</a></td>
+<td align="center"><a href="http://www.boost.org/users/people.html">People</a></td>
+<td align="center"><a href="http://www.boost.org/users/faq.html">FAQ</a></td>
+<td align="center"><a href="../../../../../../more/index.htm">More</a></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../ref.html"><img src="../.././doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../ref.html"><img src="../.././doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../.././doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="boost__array/value_type.html"><img src="../.././doc/src/images/next.png" alt="Next"></a>
+</div>
+<div class="section">
+<div class="titlepage"></div>
+<p>
+        A container that encapsulates fixed size arrays.
+      </p>
+<h5>
+<a name="array.ref.boost__array.h0"></a>
+        <span class="phrase"><a name="array.ref.boost__array.synopsis"></a></span><a class="link" href="boost__array.html#array.ref.boost__array.synopsis">Synopsis</a>
+      </h5>
+<p>
+        Defined in header <code class="literal">&lt;<a href="https://github.com/cppalliance/array/blob/master/include/boost/array.hpp" target="_top">boost/array.hpp</a>&gt;</code>
+      </p>
+<pre class="programlisting"><span class="keyword">template</span><span class="special">&lt;</span>
+    <span class="keyword">class</span> <span class="identifier">T</span><span class="special">,</span>
+    <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <span class="identifier">N</span><span class="special">&gt;</span>
+<span class="keyword">class</span> <span class="identifier">array</span>
+</pre>
+<h5>
+<a name="array.ref.boost__array.h1"></a>
+        <span class="phrase"><a name="array.ref.boost__array.types"></a></span><a class="link" href="boost__array.html#array.ref.boost__array.types">Types</a>
+      </h5>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                <p>
+                  Name
+                </p>
+              </th>
+<th>
+                <p>
+                  Description
+                </p>
+              </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/const_iterator.html" title="const_iterator">const_iterator</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Constant iterator to array, i.e. a pointer.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/const_reference.html" title="const_reference">const_reference</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Constant reference to value type.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/const_reverse_iterator.html" title="const_reverse_iterator">const_reverse_iterator</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Constant reverse array iterator - std::reverse_iterator&lt;const_iterator&gt;
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/difference_type.html" title="difference_type">difference_type</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Type used to represent distance between iterators.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/iterator.html" title="iterator">iterator</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Iterator to C-style array, i.e. a pointer.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/reference.html" title="reference">reference</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Reference to value type.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/reverse_iterator.html" title="reverse_iterator">reverse_iterator</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Reverse array iterator - std::reverse_iterator&lt;iterator&gt;
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/size_type.html" title="size_type">size_type</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Type used to represent array size.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/value_type.html" title="value_type">value_type</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  The array value type.
+                </p>
+              </td>
+</tr>
+</tbody>
+</table></div>
+<h5>
+<a name="array.ref.boost__array.h2"></a>
+        <span class="phrase"><a name="array.ref.boost__array.member_functions"></a></span><a class="link" href="boost__array.html#array.ref.boost__array.member_functions">Member
+        Functions</a>
+      </h5>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                <p>
+                  Name
+                </p>
+              </th>
+<th>
+                <p>
+                  Description
+                </p>
+              </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/assign.html" title="assign">assign</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Assign one value to all elements.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/at.html" title="at">at</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Access specified element with bounds checking.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/back.html" title="back">back</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Access the last array element.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/begin.html" title="begin">begin</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Returns an iterator to the beginning. <br> <span class="silver">—</span><br>
+                  Returns a constant iterator to the beginning.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/c_array.html" title="c_array">c_array</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Direct access to the underlying array.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/cbegin.html" title="cbegin">cbegin</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Returns a constant iterator to the beginning.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/cend.html" title="cend">cend</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Returns a constant iterator to the end.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/crbegin.html" title="crbegin">crbegin</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Returns a reverse iterator to the beginning.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/crend.html" title="crend">crend</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Returns a constant reverse iterator to the end.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/data.html" title="data">data</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Direct access to the underlying array.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/end.html" title="end">end</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Returns an iterator to the end. <br> <span class="silver">—</span><br>
+                  Returns a constant iterator to the end.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/fill.html" title="fill">fill</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Assign one value to all elements.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/front.html" title="front">front</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Access the first array element.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/operator_eq_.html" title="operator=">operator=</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Overwrites element of the array with elements of another array.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/operator_lb__rb_.html" title="operator[]">operator[]</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Access specified element.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/rbegin.html" title="rbegin">rbegin</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Returns a reverse iterator to the beginning. <br> <span class="silver">—</span><br>
+                  Returns a constant reverse iterator to the beginning.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/rend.html" title="rend">rend</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Returns a reverse iterator to the end. <br> <span class="silver">—</span><br>
+                  Returns a constant reverse iterator to the end.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/swap.html" title="swap">swap</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Swaps the container contents.
+                </p>
+              </td>
+</tr>
+</tbody>
+</table></div>
+<h5>
+<a name="array.ref.boost__array.h3"></a>
+        <span class="phrase"><a name="array.ref.boost__array.static_members"></a></span><a class="link" href="boost__array.html#array.ref.boost__array.static_members">Static
+        Members</a>
+      </h5>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                <p>
+                  Name
+                </p>
+              </th>
+<th>
+                <p>
+                  Description
+                </p>
+              </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/empty.html" title="empty">empty</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Checks whether the container is empty.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/max_size.html" title="max_size">max_size</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Returns the maximum possible number of elements.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/rangecheck.html" title="rangecheck">rangecheck</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Check range.
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/size.html" title="size">size</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Returns the number of elements.
+                </p>
+              </td>
+</tr>
+</tbody>
+</table></div>
+<h5>
+<a name="array.ref.boost__array.h4"></a>
+        <span class="phrase"><a name="array.ref.boost__array.data_members"></a></span><a class="link" href="boost__array.html#array.ref.boost__array.data_members">Data
+        Members</a>
+      </h5>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                <p>
+                  Name
+                </p>
+              </th>
+<th>
+                <p>
+                  Description
+                </p>
+              </th>
+</tr></thead>
+<tbody><tr>
+<td>
+                <p>
+                  <span class="bold"><strong><a class="link" href="boost__array/elems.html" title="elems">elems</a></strong></span>
+                </p>
+              </td>
+<td>
+                <p>
+                  Underlying fixed-size array of elements of type T.
+                </p>
+              </td>
+</tr></tbody>
+</table></div>
+<h5>
+<a name="array.ref.boost__array.h5"></a>
+        <span class="phrase"><a name="array.ref.boost__array.description"></a></span><a class="link" href="boost__array.html#array.ref.boost__array.description">Description</a>
+      </h5>
+<p>
+        This class represents a container that encapsulates fixed size arrays. It
+        has the same semantics as a struct holding a C-style array <code class="computeroutput"><span class="identifier">T</span><span class="special">[</span><span class="identifier">N</span><span class="special">]</span></code>. Unlike a C-style array, it doesn't decay
+        to T* automatically. The class combines the performance of a C-style array
+        with the convenience of a standard container. There is a special case for
+        a zero-length array (N == 0). In that case, array.begin() == array.end(),
+        which is some unique value.
+      </p>
+<h5>
+<a name="array.ref.boost__array.h6"></a>
+        <span class="phrase"><a name="array.ref.boost__array.thread_safety"></a></span><a class="link" href="boost__array.html#array.ref.boost__array.thread_safety">Thread
+        Safety</a>
+      </h5>
+<p>
+        Not thread safe
+      </p>
+<h5>
+<a name="array.ref.boost__array.h7"></a>
+        <span class="phrase"><a name="array.ref.boost__array.template_parameters"></a></span><a class="link" href="boost__array.html#array.ref.boost__array.template_parameters">Template
+        Parameters</a>
+      </h5>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                <p>
+                  Type
+                </p>
+              </th>
+<th>
+                <p>
+                  Description
+                </p>
+              </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+                <p>
+                  <code class="computeroutput"><span class="identifier">T</span></code>
+                </p>
+              </td>
+<td>
+                <p>
+                  The array value type
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+                <p>
+                  <code class="computeroutput"><span class="identifier">N</span></code>
+                </p>
+              </td>
+<td>
+                <p>
+                  The array size
+                </p>
+              </td>
+</tr>
+</tbody>
+</table></div>
+<h5>
+<a name="array.ref.boost__array.h8"></a>
+        <span class="phrase"><a name="array.ref.boost__array.see_also"></a></span><a class="link" href="boost__array.html#array.ref.boost__array.see_also">See
+        Also</a>
+      </h5>
+<p>
+        See Also std::vector
+      </p>
+<p>
+        Convenience header <code class="literal">&lt;<a href="https://github.com/cppalliance/array/blob/master/include/boost/array.hpp" target="_top">boost/array.hpp</a>&gt;</code>
+      </p>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><div class="copyright-footer">Copyright © 2001-2004 Nicolai
+      Josuttis<br>Copyright © 2012 Marshall Clow<p>
+        Distributed under the Boost Software License, Version 1.0. (See accompanying
+        file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt" target="_top">http://www.boost.org/LICENSE_1_0.txt</a>)
+      </p>
+</div></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../ref.html"><img src="../.././doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../ref.html"><img src="../.././doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../.././doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="boost__array/value_type.html"><img src="../.././doc/src/images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>
