@@ -46,47 +46,47 @@
   <span class="keyword">typedef</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">reverse_iterator</span><span class="special">&lt;</span> <span class="identifier">const_iterator</span> <span class="special">&gt;</span> <a name="boost.array.const_reverse_iterator"></a><span class="identifier">const_reverse_iterator</span><span class="special">;</span>  <span class="comment">// Constant reverse array iterator - std::reverse_iterator&lt;const_iterator&gt; </span>
 
   <span class="comment">// <a class="link" href="array.html#boost.arrayconstruct-copy-destruct">construct/copy/destruct</a></span>
-  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T2<span class="special">&gt;</span> <a class="link" href="array.html" title="Class template array">array</a><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="array.html#idm12738807824-bb"><span class="keyword">operator</span><span class="special">=</span></a><span class="special">(</span><span class="keyword">const</span> <a class="link" href="array.html" title="Class template array">array</a><span class="special">&lt;</span> <span class="identifier">T2</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T2<span class="special">&gt;</span> <a class="link" href="array.html" title="Class template array">array</a><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="array.html#idm185488322288-bb"><span class="keyword">operator</span><span class="special">=</span></a><span class="special">(</span><span class="keyword">const</span> <a class="link" href="array.html" title="Class template array">array</a><span class="special">&lt;</span> <span class="identifier">T2</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
 
-  <span class="comment">// <a class="link" href="array.html#idm12741086560-bb">public member functions</a></span>
-  <span class="identifier">iterator</span> <a class="link" href="array.html#idm12741086080-bb"><span class="identifier">begin</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="identifier">const_iterator</span> <a class="link" href="array.html#idm12741081120-bb"><span class="identifier">begin</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
-  <span class="identifier">const_iterator</span> <a class="link" href="array.html#idm12741075760-bb"><span class="identifier">cbegin</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
-  <span class="identifier">iterator</span> <a class="link" href="array.html#idm12741070576-bb"><span class="identifier">end</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="identifier">const_iterator</span> <a class="link" href="array.html#idm12741065792-bb"><span class="identifier">end</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
-  <span class="identifier">const_iterator</span> <a class="link" href="array.html#idm12741060160-bb"><span class="identifier">cend</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
-  <span class="identifier">reverse_iterator</span> <a class="link" href="array.html#idm12741054416-bb"><span class="identifier">rbegin</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="identifier">const_reverse_iterator</span> <a class="link" href="array.html#idm12741049040-bb"><span class="identifier">rbegin</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
-  <span class="identifier">const_reverse_iterator</span> <a class="link" href="array.html#idm12741042992-bb"><span class="identifier">crbegin</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
-  <span class="identifier">reverse_iterator</span> <a class="link" href="array.html#idm12741036928-bb"><span class="identifier">rend</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="identifier">const_reverse_iterator</span> <a class="link" href="array.html#idm12741031440-bb"><span class="identifier">rend</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
-  <span class="identifier">const_reverse_iterator</span> <a class="link" href="array.html#idm12741025024-bb"><span class="identifier">crend</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
-  <span class="identifier">reference</span> <a class="link" href="array.html#idm12741018528-bb"><span class="keyword">operator</span><span class="special">[</span><span class="special">]</span></a><span class="special">(</span><span class="identifier">size_type</span><span class="special">)</span><span class="special">;</span>
-  <span class="identifier">const_reference</span> <a class="link" href="array.html#idm12741011072-bb"><span class="keyword">operator</span><span class="special">[</span><span class="special">]</span></a><span class="special">(</span><span class="identifier">size_type</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
-  <span class="identifier">reference</span> <a class="link" href="array.html#idm12741003008-bb"><span class="identifier">at</span></a><span class="special">(</span><span class="identifier">size_type</span><span class="special">)</span><span class="special">;</span>
-  <span class="identifier">const_reference</span> <a class="link" href="array.html#idm12740994992-bb"><span class="identifier">at</span></a><span class="special">(</span><span class="identifier">size_type</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
-  <span class="identifier">reference</span> <a class="link" href="array.html#idm12740986112-bb"><span class="identifier">front</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">constexpr</span> <span class="identifier">const_reference</span> <a class="link" href="array.html#idm12740979632-bb"><span class="identifier">front</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
-  <span class="identifier">reference</span> <a class="link" href="array.html#idm12738858576-bb"><span class="identifier">back</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">constexpr</span> <span class="identifier">const_reference</span> <a class="link" href="array.html#idm12738852096-bb"><span class="identifier">back</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="array.html#idm12738844752-bb"><span class="identifier">swap</span></a><span class="special">(</span><a class="link" href="array.html" title="Class template array">array</a><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">const</span> <span class="identifier">T</span> <span class="special">*</span> <a class="link" href="array.html#idm12738837808-bb"><span class="identifier">data</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
-  <span class="identifier">T</span> <span class="special">*</span> <a class="link" href="array.html#idm12738831056-bb"><span class="identifier">data</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="identifier">T</span> <span class="special">*</span> <a class="link" href="array.html#idm12738825424-bb"><span class="identifier">c_array</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="array.html#idm12738819280-bb"><span class="identifier">assign</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="array.html#idm12738813424-bb"><span class="identifier">fill</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="comment">// <a class="link" href="array.html#idm185488494656-bb">public member functions</a></span>
+  <span class="identifier">iterator</span> <a class="link" href="array.html#idm185488494176-bb"><span class="identifier">begin</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">const_iterator</span> <a class="link" href="array.html#idm185488489088-bb"><span class="identifier">begin</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">const_iterator</span> <a class="link" href="array.html#idm185488483600-bb"><span class="identifier">cbegin</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">iterator</span> <a class="link" href="array.html#idm185488478288-bb"><span class="identifier">end</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">const_iterator</span> <a class="link" href="array.html#idm185488473376-bb"><span class="identifier">end</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">const_iterator</span> <a class="link" href="array.html#idm185488467616-bb"><span class="identifier">cend</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">reverse_iterator</span> <a class="link" href="array.html#idm185488461744-bb"><span class="identifier">rbegin</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">const_reverse_iterator</span> <a class="link" href="array.html#idm185488456240-bb"><span class="identifier">rbegin</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">const_reverse_iterator</span> <a class="link" href="array.html#idm185488450064-bb"><span class="identifier">crbegin</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">reverse_iterator</span> <a class="link" href="array.html#idm185488443872-bb"><span class="identifier">rend</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">const_reverse_iterator</span> <a class="link" href="array.html#idm185488438256-bb"><span class="identifier">rend</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">const_reverse_iterator</span> <a class="link" href="array.html#idm185488431712-bb"><span class="identifier">crend</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">reference</span> <a class="link" href="array.html#idm185488425088-bb"><span class="keyword">operator</span><span class="special">[</span><span class="special">]</span></a><span class="special">(</span><span class="identifier">size_type</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">const_reference</span> <a class="link" href="array.html#idm185488417632-bb"><span class="keyword">operator</span><span class="special">[</span><span class="special">]</span></a><span class="special">(</span><span class="identifier">size_type</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">reference</span> <a class="link" href="array.html#idm185488409440-bb"><span class="identifier">at</span></a><span class="special">(</span><span class="identifier">size_type</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">const_reference</span> <a class="link" href="array.html#idm185488401296-bb"><span class="identifier">at</span></a><span class="special">(</span><span class="identifier">size_type</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">reference</span> <a class="link" href="array.html#idm185488392288-bb"><span class="identifier">front</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">constexpr</span> <span class="identifier">const_reference</span> <a class="link" href="array.html#idm185488385568-bb"><span class="identifier">front</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">reference</span> <a class="link" href="array.html#idm185488377536-bb"><span class="identifier">back</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">constexpr</span> <span class="identifier">const_reference</span> <a class="link" href="array.html#idm185488370464-bb"><span class="identifier">back</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="array.html#idm185488362432-bb"><span class="identifier">swap</span></a><span class="special">(</span><a class="link" href="array.html" title="Class template array">array</a><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">T</span> <span class="special">*</span> <a class="link" href="array.html#idm185488354928-bb"><span class="identifier">data</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">T</span> <span class="special">*</span> <a class="link" href="array.html#idm185488347600-bb"><span class="identifier">data</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">T</span> <span class="special">*</span> <a class="link" href="array.html#idm185488341520-bb"><span class="identifier">c_array</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="array.html#idm185488334864-bb"><span class="identifier">assign</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="array.html#idm185488328416-bb"><span class="identifier">fill</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
 
-  <span class="comment">// <a class="link" href="array.html#idm12738801216-bb">public static functions</a></span>
-  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="identifier">size_type</span> <a class="link" href="array.html#idm12738800736-bb"><span class="identifier">size</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">bool</span> <a class="link" href="array.html#idm12738795136-bb"><span class="identifier">empty</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="identifier">size_type</span> <a class="link" href="array.html#idm12738789152-bb"><span class="identifier">max_size</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">bool</span> <a class="link" href="array.html#idm12738783472-bb"><span class="identifier">rangecheck</span></a><span class="special">(</span><span class="identifier">size_type</span><span class="special">)</span><span class="special">;</span>
+  <span class="comment">// <a class="link" href="array.html#idm185488315136-bb">public static functions</a></span>
+  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="identifier">size_type</span> <a class="link" href="array.html#idm185488314608-bb"><span class="identifier">size</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">bool</span> <a class="link" href="array.html#idm185488308416-bb"><span class="identifier">empty</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="identifier">size_type</span> <a class="link" href="array.html#idm185488301856-bb"><span class="identifier">max_size</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">bool</span> <a class="link" href="array.html#idm185488295696-bb"><span class="identifier">rangecheck</span></a><span class="special">(</span><span class="identifier">size_type</span><span class="special">)</span><span class="special">;</span>
 
   <span class="comment">// public data members</span>
   <span class="identifier">T</span> <span class="identifier">elems</span><span class="special">;</span>  <span class="comment">// Underlying fixed-size array of elements of type T. </span>
 <span class="special">}</span><span class="special">;</span></pre></div>
 <div class="refsect1">
-<a name="idm107507350320"></a><h2>Description</h2>
+<a name="idm277235635616"></a><h2>Description</h2>
 <p>This class represents a container that encapsulates fixed size arrays.</p>
 <p>It has the same semantics as a struct holding a C-style array <code class="computeroutput">T[N]</code>. Unlike a C-style array, it doesn't decay to T* automatically.</p>
 <p>The class combines the performance of a C-style array with the convenience of a standard container.</p>
@@ -103,7 +103,7 @@ Not thread safe</p>
 <p>
 See Also std::vector </p>
 <div class="refsect2">
-<a name="idm107507345696"></a><h3>Template Parameters</h3>
+<a name="idm277235630832"></a><h3>Template Parameters</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1">
 <li class="listitem">
 <pre class="literallayout"><span class="keyword">typename</span> T</pre>
@@ -116,7 +116,7 @@ See Also std::vector </p>
 </ol></div>
 </div>
 <div class="refsect2">
-<a name="idm107507339728"></a><h3>
+<a name="idm277235624592"></a><h3>
 <a name="boost.arraytypes"></a><code class="computeroutput">array</code> 
         public
        types</h3>
@@ -134,12 +134,12 @@ See Also std::vector </p>
 </ol></div>
 </div>
 <div class="refsect2">
-<a name="idm107507328848"></a><h3>
+<a name="idm277235612832"></a><h3>
 <a name="boost.arrayconstruct-copy-destruct"></a><code class="computeroutput">array</code> 
         public
        construct/copy/destruct</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
-<pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T2<span class="special">&gt;</span> <a class="link" href="array.html" title="Class template array">array</a><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idm12738807824-bb"></a><span class="keyword">operator</span><span class="special">=</span><span class="special">(</span><span class="keyword">const</span> <a class="link" href="array.html" title="Class template array">array</a><span class="special">&lt;</span> <span class="identifier">T2</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span> rhs<span class="special">)</span><span class="special">;</span></pre>Member group: Assignment with type conversion. <p>Overwrites element of the array with elements of another array</p>
+<pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T2<span class="special">&gt;</span> <a class="link" href="array.html" title="Class template array">array</a><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idm185488322288-bb"></a><span class="keyword">operator</span><span class="special">=</span><span class="special">(</span><span class="keyword">const</span> <a class="link" href="array.html" title="Class template array">array</a><span class="special">&lt;</span> <span class="identifier">T2</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span> rhs<span class="special">)</span><span class="special">;</span></pre>Member group: Assignment with type conversion. <p>Overwrites element of the array with elements of another array</p>
 <p>This function overwrites every element of the this array with the corresponding elements of another array</p>
 <p><b>Complexity. </b></p>
 <p>
@@ -147,11 +147,11 @@ Linear</p>
 <p>
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>assign </p>
 <p>
 </p>
 <p>
-See Also assign </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -165,11 +165,11 @@ See Also assign </p>
 </li></ol></div>
 </div>
 <div class="refsect2">
-<a name="idm107507307760"></a><h3>
-<a name="idm12741086560-bb"></a><code class="computeroutput">array</code> public member functions</h3>
+<a name="idm277235590128"></a><h3>
+<a name="idm185488494656-bb"></a><code class="computeroutput">array</code> public member functions</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1">
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">iterator</span> <a name="idm12741086080-bb"></a><span class="identifier">begin</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Member group: Iterators. <p>Returns an iterator to the beginning</p>
+<pre class="literallayout"><span class="identifier">iterator</span> <a name="idm185488494176-bb"></a><span class="identifier">begin</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Member group: Iterators. <p>Returns an iterator to the beginning</p>
 <p>This function returns an iterator to the first element of the array.</p>
 <p><b>Complexity. </b></p>
 <p>
@@ -185,11 +185,11 @@ Constant</p>
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>end </p>
 <p>
 </p>
 <p>
-See Also end </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -202,7 +202,7 @@ See Also end </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">const_iterator</span> <a name="idm12741081120-bb"></a><span class="identifier">begin</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant iterator to the beginning. <p>This function returns a constant iterator to the first element of the array. This is the overload that gets called when <code class="computeroutput">this</code> is constant.</p>
+<pre class="literallayout"><span class="identifier">const_iterator</span> <a name="idm185488489088-bb"></a><span class="identifier">begin</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant iterator to the beginning. <p>This function returns a constant iterator to the first element of the array. This is the overload that gets called when <code class="computeroutput">this</code> is constant.</p>
 <p><b>Complexity. </b></p>
 <p>
 Constant</p>
@@ -217,11 +217,11 @@ Constant</p>
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>end </p>
 <p>
 </p>
 <p>
-See Also end </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -234,7 +234,7 @@ See Also end </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">const_iterator</span> <a name="idm12741075760-bb"></a><span class="identifier">cbegin</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant iterator to the beginning. <p>This function returns a constant iterator to the first element of the array.</p>
+<pre class="literallayout"><span class="identifier">const_iterator</span> <a name="idm185488483600-bb"></a><span class="identifier">cbegin</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant iterator to the beginning. <p>This function returns a constant iterator to the first element of the array.</p>
 <p>This function is usually called to provide a constant iterator when <code class="computeroutput">this</code> is not constant.</p>
 <p><b>Complexity. </b></p>
 <p>
@@ -250,14 +250,14 @@ Constant</p>
 <p>
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>end </p>
 <p>
 </p>
 <p>
-See Also end </p>
+</p>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">iterator</span> <a name="idm12741070576-bb"></a><span class="identifier">end</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Returns an iterator to the end. <p>This function returns an iterator to the element following the last element of the array</p>
+<pre class="literallayout"><span class="identifier">iterator</span> <a name="idm185488478288-bb"></a><span class="identifier">end</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Returns an iterator to the end. <p>This function returns an iterator to the element following the last element of the array</p>
 <p><b>Complexity. </b></p>
 <p>
 Constant</p>
@@ -272,11 +272,11 @@ Constant</p>
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>begin </p>
 <p>
 </p>
 <p>
-See Also begin </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -289,7 +289,7 @@ See Also begin </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">const_iterator</span> <a name="idm12741065792-bb"></a><span class="identifier">end</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant iterator to the end. <p>This function returns a constant iterator to the first element of the array.</p>
+<pre class="literallayout"><span class="identifier">const_iterator</span> <a name="idm185488473376-bb"></a><span class="identifier">end</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant iterator to the end. <p>This function returns a constant iterator to the first element of the array.</p>
 <p>This function overload gets called when <code class="computeroutput">this</code> is constant.</p>
 <p><b>Complexity. </b></p>
 <p>
@@ -305,11 +305,11 @@ Constant</p>
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>begin </p>
 <p>
 </p>
 <p>
-See Also begin </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -322,7 +322,7 @@ See Also begin </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">const_iterator</span> <a name="idm12741060160-bb"></a><span class="identifier">cend</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant iterator to the end. <p>This function returns a constant iterator to the element following the last element of the array.</p>
+<pre class="literallayout"><span class="identifier">const_iterator</span> <a name="idm185488467616-bb"></a><span class="identifier">cend</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant iterator to the end. <p>This function returns a constant iterator to the element following the last element of the array.</p>
 <p>This function is usually called to provide a constant iterator when <code class="computeroutput">this</code> is not constant.</p>
 <p><b>Complexity. </b></p>
 <p>
@@ -338,11 +338,11 @@ Constant</p>
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>cbegin </p>
 <p>
 </p>
 <p>
-See Also cbegin </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -355,7 +355,7 @@ See Also cbegin </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">reverse_iterator</span> <a name="idm12741054416-bb"></a><span class="identifier">rbegin</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Member group: Iterators. <p>Returns a reverse iterator to the beginning</p>
+<pre class="literallayout"><span class="identifier">reverse_iterator</span> <a name="idm185488461744-bb"></a><span class="identifier">rbegin</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Member group: Iterators. <p>Returns a reverse iterator to the beginning</p>
 <p>Returns a reverse iterator to the first element of the reversed array.</p>
 <p>This reverse iterator corresponds to the last element of the non-reversed array.</p>
 <p><b>Complexity. </b></p>
@@ -372,11 +372,11 @@ Constant</p>
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>rend </p>
 <p>
 </p>
 <p>
-See Also rend </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -389,7 +389,7 @@ See Also rend </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">const_reverse_iterator</span> <a name="idm12741049040-bb"></a><span class="identifier">rbegin</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant reverse iterator to the beginning. <p>Returns a reverse iterator to the first element of the reversed array.</p>
+<pre class="literallayout"><span class="identifier">const_reverse_iterator</span> <a name="idm185488456240-bb"></a><span class="identifier">rbegin</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant reverse iterator to the beginning. <p>Returns a reverse iterator to the first element of the reversed array.</p>
 <p>This reverse iterator corresponds to the last element of the non-reversed array.</p>
 <p>This function overload gets called when <code class="computeroutput">this</code> is constant.</p>
 <p><b>Complexity. </b></p>
@@ -406,11 +406,11 @@ Constant</p>
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>rend </p>
 <p>
 </p>
 <p>
-See Also rend </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -423,7 +423,7 @@ See Also rend </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">const_reverse_iterator</span> <a name="idm12741042992-bb"></a><span class="identifier">crbegin</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a reverse iterator to the beginning. <p>Returns a reverse iterator to the first element of the reversed array.</p>
+<pre class="literallayout"><span class="identifier">const_reverse_iterator</span> <a name="idm185488450064-bb"></a><span class="identifier">crbegin</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a reverse iterator to the beginning. <p>Returns a reverse iterator to the first element of the reversed array.</p>
 <p>This reverse iterator corresponds to the last element of the non-reversed array.</p>
 <p>This function is usually called to provide a constant iterator when <code class="computeroutput">this</code> is not constant.</p>
 <p><b>Complexity. </b></p>
@@ -440,11 +440,11 @@ Constant</p>
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>rend </p>
 <p>
 </p>
 <p>
-See Also rend </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -457,7 +457,7 @@ See Also rend </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">reverse_iterator</span> <a name="idm12741036928-bb"></a><span class="identifier">rend</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Returns a reverse iterator to the end. <p>Returns a reverse iterator to the element following the last element of the reversed array.</p>
+<pre class="literallayout"><span class="identifier">reverse_iterator</span> <a name="idm185488443872-bb"></a><span class="identifier">rend</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Returns a reverse iterator to the end. <p>Returns a reverse iterator to the element following the last element of the reversed array.</p>
 <p>This iterator corresponds to the element preceding the first element of the non-reversed array.</p>
 <p>This element acts as a placeholder. Attempting to access it results in undefined behavior.</p>
 <p><b>Complexity. </b></p>
@@ -474,11 +474,11 @@ Constant</p>
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>rend </p>
 <p>
 </p>
 <p>
-See Also rend </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -491,7 +491,7 @@ See Also rend </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">const_reverse_iterator</span> <a name="idm12741031440-bb"></a><span class="identifier">rend</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant reverse iterator to the end. <p>Returns a reverse iterator to the element following the last element of the reversed array.</p>
+<pre class="literallayout"><span class="identifier">const_reverse_iterator</span> <a name="idm185488438256-bb"></a><span class="identifier">rend</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant reverse iterator to the end. <p>Returns a reverse iterator to the element following the last element of the reversed array.</p>
 <p>This iterator corresponds to the element preceding the first element of the non-reversed array.</p>
 <p>This element acts as a placeholder. Attempting to access it results in undefined behavior.</p>
 <p>This function overload gets called when <code class="computeroutput">this</code> is constant.</p>
@@ -509,11 +509,11 @@ Constant</p>
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>rend </p>
 <p>
 </p>
 <p>
-See Also rend </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -526,7 +526,7 @@ See Also rend </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">const_reverse_iterator</span> <a name="idm12741025024-bb"></a><span class="identifier">crend</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant reverse iterator to the end. <p>Returns a reverse iterator to the element following the last element of the reversed array.</p>
+<pre class="literallayout"><span class="identifier">const_reverse_iterator</span> <a name="idm185488431712-bb"></a><span class="identifier">crend</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant reverse iterator to the end. <p>Returns a reverse iterator to the element following the last element of the reversed array.</p>
 <p>This iterator corresponds to the element preceding the first element of the non-reversed array.</p>
 <p>This element acts as a placeholder. Attempting to access it results in undefined behavior.</p>
 <p>This function is usually called to provide a constant iterator when <code class="computeroutput">this</code> is not constant.</p>
@@ -544,11 +544,11 @@ Constant</p>
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>rend </p>
 <p>
 </p>
 <p>
-See Also rend </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -561,7 +561,7 @@ See Also rend </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">reference</span> <a name="idm12741018528-bb"></a><span class="keyword">operator</span><span class="special">[</span><span class="special">]</span><span class="special">(</span><span class="identifier">size_type</span> i<span class="special">)</span><span class="special">;</span></pre>Member group: Element access. <p>Access specified element</p>
+<pre class="literallayout"><span class="identifier">reference</span> <a name="idm185488425088-bb"></a><span class="keyword">operator</span><span class="special">[</span><span class="special">]</span><span class="special">(</span><span class="identifier">size_type</span> i<span class="special">)</span><span class="special">;</span></pre>Member group: Element access. <p>Access specified element</p>
 <p>This function Returns a reference to the element at specified location i.</p>
 <p>No bounds checking is performed.</p>
 <p><b>Complexity. </b></p>
@@ -615,7 +615,7 @@ See Also at </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">const_reference</span> <a name="idm12741011072-bb"></a><span class="keyword">operator</span><span class="special">[</span><span class="special">]</span><span class="special">(</span><span class="identifier">size_type</span> i<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Access specified element. <p>This function Returns a reference to the element at specified location i.</p>
+<pre class="literallayout"><span class="identifier">const_reference</span> <a name="idm185488417632-bb"></a><span class="keyword">operator</span><span class="special">[</span><span class="special">]</span><span class="special">(</span><span class="identifier">size_type</span> i<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Access specified element. <p>This function Returns a reference to the element at specified location i.</p>
 <p>No bounds checking is performed.</p>
 <p>This overload gets called when <code class="computeroutput">this</code> is constant.</p>
 <p><b>Complexity. </b></p>
@@ -637,11 +637,11 @@ Accessing a nonexistent element through this operator is undefined behavior.</p>
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>at </p>
 <p>
 </p>
 <p>
-See Also at </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -669,7 +669,7 @@ See Also at </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">reference</span> <a name="idm12741003008-bb"></a><span class="identifier">at</span><span class="special">(</span><span class="identifier">size_type</span> i<span class="special">)</span><span class="special">;</span></pre>Access specified element with bounds checking. <p>This function Returns a reference to the element at specified location i, with bounds checking.</p>
+<pre class="literallayout"><span class="identifier">reference</span> <a name="idm185488409440-bb"></a><span class="identifier">at</span><span class="special">(</span><span class="identifier">size_type</span> i<span class="special">)</span><span class="special">;</span></pre>Access specified element with bounds checking. <p>This function Returns a reference to the element at specified location i, with bounds checking.</p>
 <p>If pos is not within the range of the container, an exception of type <code class="computeroutput">std::out_of_range</code> is thrown.</p>
 <p><b>Complexity. </b></p>
 <p>
@@ -684,11 +684,11 @@ Constant</p>
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>operator[] </p>
 <p>
 </p>
 <p>
-See Also operator[] </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -716,7 +716,7 @@ See Also operator[] </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">const_reference</span> <a name="idm12740994992-bb"></a><span class="identifier">at</span><span class="special">(</span><span class="identifier">size_type</span> i<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Access specified element with bounds checking. <p>This function Returns a reference to the element at specified location i, with bounds checking.</p>
+<pre class="literallayout"><span class="identifier">const_reference</span> <a name="idm185488401296-bb"></a><span class="identifier">at</span><span class="special">(</span><span class="identifier">size_type</span> i<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Access specified element with bounds checking. <p>This function Returns a reference to the element at specified location i, with bounds checking.</p>
 <p>If pos is not within the range of the container, an exception of type <code class="computeroutput">std::out_of_range</code> is thrown.</p>
 <p>This overload gets called when <code class="computeroutput">this</code> is constant.</p>
 <p><b>Complexity. </b></p>
@@ -732,11 +732,11 @@ Constant</p>
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>operator[] </p>
 <p>
 </p>
 <p>
-See Also operator[] </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -764,7 +764,7 @@ See Also operator[] </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">reference</span> <a name="idm12740986112-bb"></a><span class="identifier">front</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Access the first array element. <p>This function returns a reference to the first element in the container.</p>
+<pre class="literallayout"><span class="identifier">reference</span> <a name="idm185488392288-bb"></a><span class="identifier">front</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Access the first array element. <p>This function returns a reference to the first element in the container.</p>
 <p>Calling front on an empty container is undefined.</p>
 <p><b>Complexity. </b></p>
 <p>
@@ -784,11 +784,11 @@ Constant</p>
 <p>
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>operator[], at, begin, end </p>
 <p>
 </p>
 <p>
-See Also operator[], at, begin, end </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -801,7 +801,7 @@ See Also operator[], at, begin, end </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">constexpr</span> <span class="identifier">const_reference</span> <a name="idm12740979632-bb"></a><span class="identifier">front</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Access the first array element. <p>This function returns a reference to the first element in the container.</p>
+<pre class="literallayout"><span class="keyword">constexpr</span> <span class="identifier">const_reference</span> <a name="idm185488385568-bb"></a><span class="identifier">front</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Access the first array element. <p>This function returns a reference to the first element in the container.</p>
 <p>Calling front on an empty container is undefined.</p>
 <p>This overload gets called when <code class="computeroutput">this</code> is constant.</p>
 <p><b>Complexity. </b></p>
@@ -822,11 +822,11 @@ Constant</p>
 <p>
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>operator[], at, begin, end </p>
 <p>
 </p>
 <p>
-See Also operator[], at, begin, end </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -839,7 +839,7 @@ See Also operator[], at, begin, end </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">reference</span> <a name="idm12738858576-bb"></a><span class="identifier">back</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Access the last array element. <p>This function returns a reference to the last element in the container.</p>
+<pre class="literallayout"><span class="identifier">reference</span> <a name="idm185488377536-bb"></a><span class="identifier">back</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Access the last array element. <p>This function returns a reference to the last element in the container.</p>
 <p>Calling front on an empty container is undefined.</p>
 <p><b>Complexity. </b></p>
 <p>
@@ -859,11 +859,11 @@ Constant</p>
 <p>
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>operator[], at, begin, end </p>
 <p>
 </p>
 <p>
-See Also operator[], at, begin, end </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -876,7 +876,7 @@ See Also operator[], at, begin, end </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">constexpr</span> <span class="identifier">const_reference</span> <a name="idm12738852096-bb"></a><span class="identifier">back</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Access the last array element. <p>This function returns a reference to the last element in the container.</p>
+<pre class="literallayout"><span class="keyword">constexpr</span> <span class="identifier">const_reference</span> <a name="idm185488370464-bb"></a><span class="identifier">back</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Access the last array element. <p>This function returns a reference to the last element in the container.</p>
 <p>Calling front on an empty container is undefined.</p>
 <p>This overload gets called when <code class="computeroutput">this</code> is constant.</p>
 <p><b>Complexity. </b></p>
@@ -897,11 +897,11 @@ Constant</p>
 <p>
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>operator[], at, begin, end </p>
 <p>
 </p>
 <p>
-See Also operator[], at, begin, end </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -914,7 +914,7 @@ See Also operator[], at, begin, end </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">void</span> <a name="idm12738844752-bb"></a><span class="identifier">swap</span><span class="special">(</span><a class="link" href="array.html" title="Class template array">array</a><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span> y<span class="special">)</span><span class="special">;</span></pre>Member group: Swap. <p>Swaps the container contents</p>
+<pre class="literallayout"><span class="keyword">void</span> <a name="idm185488362432-bb"></a><span class="identifier">swap</span><span class="special">(</span><a class="link" href="array.html" title="Class template array">array</a><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span> y<span class="special">)</span><span class="special">;</span></pre>Member group: Swap. <p>Swaps the container contents</p>
 <p>Exchanges the contents of the container with those of other.</p>
 <p>This function does not cause iterators and references to associate with the other container.</p>
 <p><b>Complexity. </b></p>
@@ -932,11 +932,11 @@ Linear</p>
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>fill, <code class="computeroutput">std::swap</code> </p>
 <p>
 </p>
 <p>
-See Also fill, <code class="computeroutput">std::swap</code> </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -964,7 +964,7 @@ See Also fill, <code class="computeroutput">std::swap</code> </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">*</span> <a name="idm12738837808-bb"></a><span class="identifier">data</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Member group: Direct access to data. <p>Direct access to the underlying array</p>
+<pre class="literallayout"><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">*</span> <a name="idm185488354928-bb"></a><span class="identifier">data</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Member group: Direct access to data. <p>Direct access to the underlying array</p>
 <p>Returns pointer to the underlying array serving as element storage.</p>
 <p>This overload gets called when <code class="computeroutput">this</code> is constant.</p>
 <p><b>Complexity. </b></p>
@@ -983,11 +983,11 @@ When the container is empty, data() is not dereferenceable.</p>
 <p>
 For non-empty containers, the returned pointer compares equal to the address of the first element.</p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>front, back, size </p>
 <p>
 </p>
 <p>
-See Also front, back, size </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -1000,7 +1000,7 @@ See Also front, back, size </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">T</span> <span class="special">*</span> <a name="idm12738831056-bb"></a><span class="identifier">data</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Direct access to the underlying array. <p>Returns pointer to the underlying array serving as element storage.</p>
+<pre class="literallayout"><span class="identifier">T</span> <span class="special">*</span> <a name="idm185488347600-bb"></a><span class="identifier">data</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Direct access to the underlying array. <p>Returns pointer to the underlying array serving as element storage.</p>
 <p><b>Complexity. </b></p>
 <p>
 Constant</p>
@@ -1017,11 +1017,11 @@ When the container is empty, data() is not dereferenceable.</p>
 <p>
 For non-empty containers, the returned pointer compares equal to the address of the first element.</p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>front, back, size </p>
 <p>
 </p>
 <p>
-See Also front, back, size </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -1034,7 +1034,7 @@ See Also front, back, size </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">T</span> <span class="special">*</span> <a name="idm12738825424-bb"></a><span class="identifier">c_array</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Direct access to the underlying array. <p>Returns pointer to the underlying array serving as element storage.</p>
+<pre class="literallayout"><span class="identifier">T</span> <span class="special">*</span> <a name="idm185488341520-bb"></a><span class="identifier">c_array</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Direct access to the underlying array. <p>Returns pointer to the underlying array serving as element storage.</p>
 <p><b>Complexity. </b></p>
 <p>
 Constant</p>
@@ -1052,11 +1052,11 @@ When the container is empty, data() is not dereferenceable.</p>
 <p>
 For non-empty containers, the returned pointer compares equal to the address of the first element.</p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>front, back, size </p>
 <p>
 </p>
 <p>
-See Also front, back, size </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -1069,7 +1069,7 @@ See Also front, back, size </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">void</span> <a name="idm12738819280-bb"></a><span class="identifier">assign</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span> value<span class="special">)</span><span class="special">;</span></pre>Assign one value to all elements. <p>This function assigns the same value to all arrays elements</p>
+<pre class="literallayout"><span class="keyword">void</span> <a name="idm185488334864-bb"></a><span class="identifier">assign</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span> value<span class="special">)</span><span class="special">;</span></pre>Assign one value to all elements. <p>This function assigns the same value to all arrays elements</p>
 <p><b>Complexity. </b></p>
 <p>
 Linear</p>
@@ -1085,11 +1085,11 @@ This function is a synonym for fill.</p>
 <p>
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>operator=, fill </p>
 <p>
 </p>
 <p>
-See Also operator=, fill </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -1102,7 +1102,7 @@ See Also operator=, fill </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">void</span> <a name="idm12738813424-bb"></a><span class="identifier">fill</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span> value<span class="special">)</span><span class="special">;</span></pre>Assign one value to all elements. <p>This function assigns the same value to all arrays elements</p>
+<pre class="literallayout"><span class="keyword">void</span> <a name="idm185488328416-bb"></a><span class="identifier">fill</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span> value<span class="special">)</span><span class="special">;</span></pre>Assign one value to all elements. <p>This function assigns the same value to all arrays elements</p>
 <p><b>Complexity. </b></p>
 <p>
 Linear</p>
@@ -1117,11 +1117,11 @@ Linear</p>
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>operator= </p>
 <p>
 </p>
 <p>
-See Also operator= </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -1136,11 +1136,11 @@ See Also operator= </p>
 </ol></div>
 </div>
 <div class="refsect2">
-<a name="idm107500711152"></a><h3>
-<a name="idm12738801216-bb"></a><code class="computeroutput">array</code> public static functions</h3>
+<a name="idm277235282400"></a><h3>
+<a name="idm185488315136-bb"></a><code class="computeroutput">array</code> public static functions</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1">
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="identifier">size_type</span> <a name="idm12738800736-bb"></a><span class="identifier">size</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Member group: Capacity. <p>Returns the number of elements</p>
+<pre class="literallayout"><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="identifier">size_type</span> <a name="idm185488314608-bb"></a><span class="identifier">size</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Member group: Capacity. <p>Returns the number of elements</p>
 <p>This function returns the number of elements in the container.</p>
 <p><b>Complexity. </b></p>
 <p>
@@ -1156,11 +1156,11 @@ Constant</p>
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>empty, max_size </p>
 <p>
 </p>
 <p>
-See Also empty, max_size </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -1173,7 +1173,7 @@ See Also empty, max_size </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">bool</span> <a name="idm12738795136-bb"></a><span class="identifier">empty</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Checks whether the container is empty. <p>This function checks whether the container is empty</p>
+<pre class="literallayout"><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">bool</span> <a name="idm185488308416-bb"></a><span class="identifier">empty</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Checks whether the container is empty. <p>This function checks whether the container is empty</p>
 <p><b>Complexity. </b></p>
 <p>
 Constant</p>
@@ -1188,11 +1188,11 @@ Constant</p>
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>size, max_size </p>
 <p>
 </p>
 <p>
-See Also size, max_size </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -1205,7 +1205,7 @@ See Also size, max_size </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="identifier">size_type</span> <a name="idm12738789152-bb"></a><span class="identifier">max_size</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Returns the maximum possible number of elements. <p>Returns the maximum number of elements the container is able to hold due to system or library implementation limitations</p>
+<pre class="literallayout"><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="identifier">size_type</span> <a name="idm185488301856-bb"></a><span class="identifier">max_size</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Returns the maximum possible number of elements. <p>Returns the maximum number of elements the container is able to hold due to system or library implementation limitations</p>
 <p><b>Complexity. </b></p>
 <p>
 Constant</p>
@@ -1220,11 +1220,11 @@ Constant</p>
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>size, empty </p>
 <p>
 </p>
 <p>
-See Also size, empty </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
@@ -1237,7 +1237,7 @@ See Also size, empty </p>
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">bool</span> <a name="idm12738783472-bb"></a><span class="identifier">rangecheck</span><span class="special">(</span><span class="identifier">size_type</span> i<span class="special">)</span><span class="special">;</span></pre>Member group: Check range. <p>Check range</p>
+<pre class="literallayout"><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">bool</span> <a name="idm185488295696-bb"></a><span class="identifier">rangecheck</span><span class="special">(</span><span class="identifier">size_type</span> i<span class="special">)</span><span class="special">;</span></pre>Member group: Check range. <p>Check range</p>
 <p>This function checks if i in the valid range for the array.</p>
 <p>This function may be private because it is static.</p>
 <p><b>Complexity. </b></p>
@@ -1257,11 +1257,11 @@ Throws <code class="computeroutput">std::out_of_range</code> if i is not in the 
 
 </p>
 <p><span class="bold"><strong>See Also:</strong></span></p>
-<p></p>
+<p>size, empty </p>
 <p>
 </p>
 <p>
-See Also size, empty </p>
+</p>
 <div class="variablelist"><table border="0" class="variablelist compact">
 <colgroup>
 <col align="left" valign="top">
