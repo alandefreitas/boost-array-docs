@@ -1,0 +1,1317 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Class template array</title>
+<link rel="stylesheet" href=".././doc/src/boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="Chapter 1. Boost.Array">
+<link rel="up" href="../array/quickref.html#header.boost.array_hpp" title="Header &lt;boost/array.hpp&gt;">
+<link rel="prev" href="../array/quickref.html" title="Reference">
+<link rel="next" href="operator__.html" title="Function template operator==">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%"><tr>
+<td valign="top"><img alt="Boost C++ Libraries" width="277" height="86" src=".././boost.png"></td>
+<td align="center"><a href="../../../../../index.html">Home</a></td>
+<td align="center"><a href="../../../../../libs/libraries.htm">Libraries</a></td>
+<td align="center"><a href="http://www.boost.org/users/people.html">People</a></td>
+<td align="center"><a href="http://www.boost.org/users/faq.html">FAQ</a></td>
+<td align="center"><a href="../../../../../more/index.htm">More</a></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../array/quickref.html"><img src=".././doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../array/quickref.html#header.boost.array_hpp"><img src=".././doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src=".././doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="operator__.html"><img src=".././doc/src/images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="boost.array"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template array</span></h2>
+<p>boost::array — A container that encapsulates fixed size arrays. </p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../array/quickref.html#header.boost.array_hpp" title="Header &lt;boost/array.hpp&gt;">boost/array.hpp</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> N<span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="array.html" title="Class template array">array</a> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="array.html#boost.arraytypes">types</a></span>
+  <span class="keyword">typedef</span> <span class="identifier">T</span>                                       <a class="link" href="array.html#boost.array.value_type"><span class="identifier">value_type</span></a><span class="special">;</span>            
+  <span class="keyword">typedef</span> <span class="identifier">T</span> <span class="special">*</span>                                     <a name="boost.array.iterator"></a><span class="identifier">iterator</span><span class="special">;</span>                <span class="comment">// Iterator to C-style array, i.e. a pointer. </span>
+  <span class="keyword">typedef</span> <span class="keyword">const</span> <span class="identifier">T</span> <span class="special">*</span>                               <a name="boost.array.const_iterator"></a><span class="identifier">const_iterator</span><span class="special">;</span>          <span class="comment">// Constant iterator to array, i.e. a pointer. </span>
+  <span class="keyword">typedef</span> <span class="identifier">T</span> <span class="special">&amp;</span>                                     <a name="boost.array.reference"></a><span class="identifier">reference</span><span class="special">;</span>               <span class="comment">// Reference to value type. </span>
+  <span class="keyword">typedef</span> <span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span>                               <a name="boost.array.const_reference"></a><span class="identifier">const_reference</span><span class="special">;</span>         <span class="comment">// Constant reference to value type. </span>
+  <span class="keyword">typedef</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span>                             <a name="boost.array.size_type"></a><span class="identifier">size_type</span><span class="special">;</span>               <span class="comment">// Type used to represent array size. </span>
+  <span class="keyword">typedef</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">ptrdiff_t</span>                          <a name="boost.array.difference_type"></a><span class="identifier">difference_type</span><span class="special">;</span>         <span class="comment">// Type used to represent distance between iterators. </span>
+  <span class="keyword">typedef</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">reverse_iterator</span><span class="special">&lt;</span> <span class="identifier">iterator</span> <span class="special">&gt;</span>       <a class="link" href="array.html#boost.array.reverse_iterator"><span class="identifier">reverse_iterator</span></a><span class="special">;</span>      
+  <span class="keyword">typedef</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">reverse_iterator</span><span class="special">&lt;</span> <span class="identifier">const_iterator</span> <span class="special">&gt;</span> <a name="boost.array.const_reverse_iterator"></a><span class="identifier">const_reverse_iterator</span><span class="special">;</span>  <span class="comment">// Constant reverse array iterator - std::reverse_iterator&lt;const_iterator&gt; </span>
+
+  <span class="comment">// <a class="link" href="array.html#boost.arrayconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T2<span class="special">&gt;</span> <a class="link" href="array.html" title="Class template array">array</a><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="array.html#idm439837370144-bb"><span class="keyword">operator</span><span class="special">=</span></a><span class="special">(</span><span class="keyword">const</span> <a class="link" href="array.html" title="Class template array">array</a><span class="special">&lt;</span> <span class="identifier">T2</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="array.html#idm439839651680-bb">public member functions</a></span>
+  <span class="identifier">iterator</span> <a class="link" href="array.html#idm439839651200-bb"><span class="identifier">begin</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">const_iterator</span> <a class="link" href="array.html#idm439839646112-bb"><span class="identifier">begin</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">const_iterator</span> <a class="link" href="array.html#idm439839640624-bb"><span class="identifier">cbegin</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">iterator</span> <a class="link" href="array.html#idm439839635568-bb"><span class="identifier">end</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">const_iterator</span> <a class="link" href="array.html#idm439839630656-bb"><span class="identifier">end</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">const_iterator</span> <a class="link" href="array.html#idm439839624896-bb"><span class="identifier">cend</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">reverse_iterator</span> <a class="link" href="array.html#idm439839619024-bb"><span class="identifier">rbegin</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">const_reverse_iterator</span> <a class="link" href="array.html#idm439839613520-bb"><span class="identifier">rbegin</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">const_reverse_iterator</span> <a class="link" href="array.html#idm439837493648-bb"><span class="identifier">crbegin</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">reverse_iterator</span> <a class="link" href="array.html#idm439837487456-bb"><span class="identifier">rend</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">const_reverse_iterator</span> <a class="link" href="array.html#idm439837481840-bb"><span class="identifier">rend</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">const_reverse_iterator</span> <a class="link" href="array.html#idm439837475296-bb"><span class="identifier">crend</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">reference</span> <a class="link" href="array.html#idm439837468672-bb"><span class="keyword">operator</span><span class="special">[</span><span class="special">]</span></a><span class="special">(</span><span class="identifier">size_type</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">const_reference</span> <a class="link" href="array.html#idm439837461088-bb"><span class="keyword">operator</span><span class="special">[</span><span class="special">]</span></a><span class="special">(</span><span class="identifier">size_type</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">reference</span> <a class="link" href="array.html#idm439837452896-bb"><span class="identifier">at</span></a><span class="special">(</span><span class="identifier">size_type</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">const_reference</span> <a class="link" href="array.html#idm439837444880-bb"><span class="identifier">at</span></a><span class="special">(</span><span class="identifier">size_type</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">reference</span> <a class="link" href="array.html#idm439837436000-bb"><span class="identifier">front</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">constexpr</span> <span class="identifier">const_reference</span> <a class="link" href="array.html#idm439837429392-bb"><span class="identifier">front</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">reference</span> <a class="link" href="array.html#idm439837421920-bb"><span class="identifier">back</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">constexpr</span> <span class="identifier">const_reference</span> <a class="link" href="array.html#idm439837415312-bb"><span class="identifier">back</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="array.html#idm439837407840-bb"><span class="identifier">swap</span></a><span class="special">(</span><a class="link" href="array.html" title="Class template array">array</a><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">T</span> <span class="special">*</span> <a class="link" href="array.html#idm439837400768-bb"><span class="identifier">data</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">T</span> <span class="special">*</span> <a class="link" href="array.html#idm439837393888-bb"><span class="identifier">data</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">T</span> <span class="special">*</span> <a class="link" href="array.html#idm439837388128-bb"><span class="identifier">c_array</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="array.html#idm439837381856-bb"><span class="identifier">assign</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="array.html#idm439837375872-bb"><span class="identifier">fill</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="array.html#idm439837363536-bb">public static functions</a></span>
+  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="identifier">size_type</span> <a class="link" href="array.html#idm439837363056-bb"><span class="identifier">size</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">bool</span> <a class="link" href="array.html#idm439837357200-bb"><span class="identifier">empty</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="identifier">size_type</span> <a class="link" href="array.html#idm439837350960-bb"><span class="identifier">max_size</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">bool</span> <a class="link" href="array.html#idm439837345152-bb"><span class="identifier">rangecheck</span></a><span class="special">(</span><span class="identifier">size_type</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// public data members</span>
+  <span class="identifier">T</span> <span class="identifier">elems</span><span class="special">;</span>  <span class="comment">// Underlying fixed-size array of elements of type T. </span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idm543082662128"></a><h2>Description</h2>
+<p>This class represents a container that encapsulates fixed size arrays.</p>
+<p>It has the same semantics as a struct holding a C-style array <code class="computeroutput">T[N]</code>. Unlike a C-style array, it doesn't decay to T* automatically.</p>
+<p>The class combines the performance of a C-style array with the convenience of a standard container.</p>
+<p>There is a special case for a zero-length array (N == 0). In that case, array.begin() == array.end(), which is some unique value.</p>
+<p><b>Thread Safety. </b></p>
+<p>
+Not thread safe</p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also std::vector </p>
+<div class="refsect2">
+<a name="idm543082657632"></a><h3>Template Parameters</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">typename</span> T</pre>
+<p>The array value type </p>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> N</pre>
+<p>The array size</p>
+</li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idm543082651664"></a><h3>
+<a name="boost.arraytypes"></a><code class="computeroutput">array</code> 
+        public
+       types</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
+<p>
+<span class="keyword">typedef</span> <span class="identifier">T</span> <a name="boost.array.value_type"></a><span class="identifier">value_type</span><span class="special">;</span></p>
+<p>The array value type </p>
+</li>
+<li class="listitem">
+<p>
+<span class="keyword">typedef</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">reverse_iterator</span><span class="special">&lt;</span> <span class="identifier">iterator</span> <span class="special">&gt;</span> <a name="boost.array.reverse_iterator"></a><span class="identifier">reverse_iterator</span><span class="special">;</span></p>
+<p>Reverse array iterator - std::reverse_iterator&lt;iterator&gt; </p>
+</li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idm543082640784"></a><h3>
+<a name="boost.arrayconstruct-copy-destruct"></a><code class="computeroutput">array</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+<pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T2<span class="special">&gt;</span> <a class="link" href="array.html" title="Class template array">array</a><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idm439837370144-bb"></a><span class="keyword">operator</span><span class="special">=</span><span class="special">(</span><span class="keyword">const</span> <a class="link" href="array.html" title="Class template array">array</a><span class="special">&lt;</span> <span class="identifier">T2</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span> rhs<span class="special">)</span><span class="special">;</span></pre>Member group: Assignment with type conversion. <p>Overwrites element of the array with elements of another array</p>
+<p>This function overwrites every element of the this array with the corresponding elements of another array</p>
+<p><b>Complexity. </b></p>
+<p>
+Linear</p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also assign </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Pointer to <code class="computeroutput">this</code> array</p></td>
+</tr></tbody>
+</table></div>
+</li></ol></div>
+</div>
+<div class="refsect2">
+<a name="idm543082619760"></a><h3>
+<a name="idm439839651680-bb"></a><code class="computeroutput">array</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">iterator</span> <a name="idm439839651200-bb"></a><span class="identifier">begin</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Member group: Iterators. <p>Returns an iterator to the beginning</p>
+<p>This function returns an iterator to the first element of the array.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+If the array is empty, the returned iterator will be equal to end()</p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also end </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Iterator to the first element of the array</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">const_iterator</span> <a name="idm439839646112-bb"></a><span class="identifier">begin</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant iterator to the beginning. <p>This function returns a constant iterator to the first element of the array. This is the overload that gets called when <code class="computeroutput">this</code> is constant.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+If the array is empty, the returned iterator will be equal to end()</p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also end </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Iterator to the first element of the array</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">const_iterator</span> <a name="idm439839640624-bb"></a><span class="identifier">cbegin</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant iterator to the beginning. <p>This function returns a constant iterator to the first element of the array.</p>
+<p>This function is usually called to provide a constant iterator when <code class="computeroutput">this</code> is not constant.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+If the array is empty, the returned iterator will be equal to end() @return Iterator to the first element of the array
+ </p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also end </p>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">iterator</span> <a name="idm439839635568-bb"></a><span class="identifier">end</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Returns an iterator to the end. <p>This function returns an iterator to the element following the last element of the array</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+If the array is empty, the returned iterator will be equal to end()</p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also begin </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Iterator to the element following the last element of the array</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">const_iterator</span> <a name="idm439839630656-bb"></a><span class="identifier">end</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant iterator to the end. <p>This function returns a constant iterator to the first element of the array.</p>
+<p>This function overload gets called when <code class="computeroutput">this</code> is constant.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+If the array is empty, the returned iterator will be equal to end()</p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also begin </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Iterator to the element following the last element of the array</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">const_iterator</span> <a name="idm439839624896-bb"></a><span class="identifier">cend</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant iterator to the end. <p>This function returns a constant iterator to the element following the last element of the array.</p>
+<p>This function is usually called to provide a constant iterator when <code class="computeroutput">this</code> is not constant.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+If the array is empty, the returned iterator will be equal to end()</p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also cbegin </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Iterator to the element following the last element of the array</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">reverse_iterator</span> <a name="idm439839619024-bb"></a><span class="identifier">rbegin</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Member group: Iterators. <p>Returns a reverse iterator to the beginning</p>
+<p>Returns a reverse iterator to the first element of the reversed array.</p>
+<p>This reverse iterator corresponds to the last element of the non-reversed array.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+If the array is empty, the returned iterator is equal to rend().</p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also rend </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Reverse iterator to the first element of the reversed array</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">const_reverse_iterator</span> <a name="idm439839613520-bb"></a><span class="identifier">rbegin</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant reverse iterator to the beginning. <p>Returns a reverse iterator to the first element of the reversed array.</p>
+<p>This reverse iterator corresponds to the last element of the non-reversed array.</p>
+<p>This function overload gets called when <code class="computeroutput">this</code> is constant.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+If the array is empty, the returned iterator is equal to rend().</p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also rend </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Reverse iterator to the first element of the reversed array</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">const_reverse_iterator</span> <a name="idm439837493648-bb"></a><span class="identifier">crbegin</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a reverse iterator to the beginning. <p>Returns a reverse iterator to the first element of the reversed array.</p>
+<p>This reverse iterator corresponds to the last element of the non-reversed array.</p>
+<p>This function is usually called to provide a constant iterator when <code class="computeroutput">this</code> is not constant.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+If the array is empty, the returned iterator is equal to rend().</p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also rend </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Reverse iterator to the first element of the reversed array</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">reverse_iterator</span> <a name="idm439837487456-bb"></a><span class="identifier">rend</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Returns a reverse iterator to the end. <p>Returns a reverse iterator to the element following the last element of the reversed array.</p>
+<p>This iterator corresponds to the element preceding the first element of the non-reversed array.</p>
+<p>This element acts as a placeholder. Attempting to access it results in undefined behavior.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+If the array is empty, the returned iterator is equal to rend().</p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also rend </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Reverse iterator to the first element of the reversed array</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">const_reverse_iterator</span> <a name="idm439837481840-bb"></a><span class="identifier">rend</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant reverse iterator to the end. <p>Returns a reverse iterator to the element following the last element of the reversed array.</p>
+<p>This iterator corresponds to the element preceding the first element of the non-reversed array.</p>
+<p>This element acts as a placeholder. Attempting to access it results in undefined behavior.</p>
+<p>This function overload gets called when <code class="computeroutput">this</code> is constant.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+If the array is empty, the returned iterator is equal to rend().</p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also rend </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Reverse iterator to the first element of the reversed array</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">const_reverse_iterator</span> <a name="idm439837475296-bb"></a><span class="identifier">crend</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Returns a constant reverse iterator to the end. <p>Returns a reverse iterator to the element following the last element of the reversed array.</p>
+<p>This iterator corresponds to the element preceding the first element of the non-reversed array.</p>
+<p>This element acts as a placeholder. Attempting to access it results in undefined behavior.</p>
+<p>This function is usually called to provide a constant iterator when <code class="computeroutput">this</code> is not constant.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+If the array is empty, the returned iterator is equal to rend().</p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also rend </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Reverse iterator to the first element of the reversed array</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">reference</span> <a name="idm439837468672-bb"></a><span class="keyword">operator</span><span class="special">[</span><span class="special">]</span><span class="special">(</span><span class="identifier">size_type</span> i<span class="special">)</span><span class="special">;</span></pre>Member group: Element access. <p>Access specified element</p>
+<p>This function Returns a reference to the element at specified location i.</p>
+<p>No bounds checking is performed.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<p><b>Preconditions. </b></p>
+<p>
+!(i &lt; size())</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+Unlike std::map::operator[], this operator never inserts a new element into the container.</p>
+<p>Accessing a nonexistent element through this operator is undefined behavior.</p>
+<p>
+
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also at </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term">Parameters:</span></p></td>
+<td><div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term"><code class="computeroutput">i</code></span></p></td>
+<td><p>Position of the element to return</p></td>
+</tr></tbody>
+</table></div></td>
+</tr>
+<tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Reference to the requested element.</p></td>
+</tr>
+</tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">const_reference</span> <a name="idm439837461088-bb"></a><span class="keyword">operator</span><span class="special">[</span><span class="special">]</span><span class="special">(</span><span class="identifier">size_type</span> i<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Access specified element. <p>This function Returns a reference to the element at specified location i.</p>
+<p>No bounds checking is performed.</p>
+<p>This overload gets called when <code class="computeroutput">this</code> is constant.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<p><b>Preconditions. </b></p>
+<p>
+!(i &lt; size())</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+Unlike std::map::operator[], this operator never inserts a new element into the container.</p>
+<p>Accessing a nonexistent element through this operator is undefined behavior.</p>
+<p>
+
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also at </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term">Parameters:</span></p></td>
+<td><div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term"><code class="computeroutput">i</code></span></p></td>
+<td><p>Position of the element to return</p></td>
+</tr></tbody>
+</table></div></td>
+</tr>
+<tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Reference to the requested element.</p></td>
+</tr>
+</tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">reference</span> <a name="idm439837452896-bb"></a><span class="identifier">at</span><span class="special">(</span><span class="identifier">size_type</span> i<span class="special">)</span><span class="special">;</span></pre>Access specified element with bounds checking. <p>This function Returns a reference to the element at specified location i, with bounds checking.</p>
+<p>If pos is not within the range of the container, an exception of type <code class="computeroutput">std::out_of_range</code> is thrown.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<p><b>Preconditions. </b></p>
+<p>
+!(i &lt; size())</p>
+<p><b>Exception Safety. </b></p>
+<p>
+<code class="computeroutput">std::out_of_range</code> if !(i &lt; size()).</p>
+<p>
+
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also operator[] </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term">Parameters:</span></p></td>
+<td><div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term"><code class="computeroutput">i</code></span></p></td>
+<td><p>Position of the element to return</p></td>
+</tr></tbody>
+</table></div></td>
+</tr>
+<tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Reference to the requested element.</p></td>
+</tr>
+</tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">const_reference</span> <a name="idm439837444880-bb"></a><span class="identifier">at</span><span class="special">(</span><span class="identifier">size_type</span> i<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Access specified element with bounds checking. <p>This function Returns a reference to the element at specified location i, with bounds checking.</p>
+<p>If pos is not within the range of the container, an exception of type <code class="computeroutput">std::out_of_range</code> is thrown.</p>
+<p>This overload gets called when <code class="computeroutput">this</code> is constant.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<p><b>Preconditions. </b></p>
+<p>
+!(i &lt; size())</p>
+<p><b>Exception Safety. </b></p>
+<p>
+<code class="computeroutput">std::out_of_range</code> if !(i &lt; size()).</p>
+<p>
+
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also operator[] </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term">Parameters:</span></p></td>
+<td><div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term"><code class="computeroutput">i</code></span></p></td>
+<td><p>Position of the element to return</p></td>
+</tr></tbody>
+</table></div></td>
+</tr>
+<tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Reference to the requested element.</p></td>
+</tr>
+</tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">reference</span> <a name="idm439837436000-bb"></a><span class="identifier">front</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Access the first array element. <p>This function returns a reference to the first element in the container.</p>
+<p>Calling front on an empty container is undefined.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+<code class="computeroutput">c.front()</code> is equivalent to <code class="computeroutput">*c.begin()</code></p>
+<p><b>Preconditions. </b></p>
+<p>
+!(empty())</p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also operator[], at, begin, end </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Reference to the first array element.</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">constexpr</span> <span class="identifier">const_reference</span> <a name="idm439837429392-bb"></a><span class="identifier">front</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Access the first array element. <p>This function returns a reference to the first element in the container.</p>
+<p>Calling front on an empty container is undefined.</p>
+<p>This overload gets called when <code class="computeroutput">this</code> is constant.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+<code class="computeroutput">c.front()</code> is equivalent to <code class="computeroutput">*c.begin()</code></p>
+<p><b>Preconditions. </b></p>
+<p>
+!(empty())</p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also operator[], at, begin, end </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Reference to the first array element.</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">reference</span> <a name="idm439837421920-bb"></a><span class="identifier">back</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Access the last array element. <p>This function returns a reference to the last element in the container.</p>
+<p>Calling front on an empty container is undefined.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+<code class="computeroutput">c.back()</code> is equivalent to <code class="computeroutput">*stdprev(c.end())</code></p>
+<p><b>Preconditions. </b></p>
+<p>
+!(empty())</p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also operator[], at, begin, end </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Reference to the last array element.</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">constexpr</span> <span class="identifier">const_reference</span> <a name="idm439837415312-bb"></a><span class="identifier">back</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Access the last array element. <p>This function returns a reference to the last element in the container.</p>
+<p>Calling front on an empty container is undefined.</p>
+<p>This overload gets called when <code class="computeroutput">this</code> is constant.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+<code class="computeroutput">c.back()</code> is equivalent to <code class="computeroutput">*stdprev(c.end())</code></p>
+<p><b>Preconditions. </b></p>
+<p>
+!(empty())</p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also operator[], at, begin, end </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Reference to the last array element.</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">void</span> <a name="idm439837407840-bb"></a><span class="identifier">swap</span><span class="special">(</span><a class="link" href="array.html" title="Class template array">array</a><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span> y<span class="special">)</span><span class="special">;</span></pre>Member group: Swap. <p>Swaps the container contents</p>
+<p>Exchanges the contents of the container with those of other.</p>
+<p>This function does not cause iterators and references to associate with the other container.</p>
+<p><b>Complexity. </b></p>
+<p>
+Linear</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+Because array&lt;T, N&gt; is not dynamically allocated, this operation has linear complexity.</p>
+<p>
+
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also fill, <code class="computeroutput">std::swap</code> </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term">Parameters:</span></p></td>
+<td><div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term"><code class="computeroutput">y</code></span></p></td>
+<td><p>container to exchange the contents with</p></td>
+</tr></tbody>
+</table></div></td>
+</tr>
+<tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>(none)</p></td>
+</tr>
+</tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">*</span> <a name="idm439837400768-bb"></a><span class="identifier">data</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>Member group: Direct access to data. <p>Direct access to the underlying array</p>
+<p>Returns pointer to the underlying array serving as element storage.</p>
+<p>This overload gets called when <code class="computeroutput">this</code> is constant.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+The pointer is such that range [data(); data() + size()) is always a valid range, even if the container is empty.</p>
+<p>When the container is empty, data() is not dereferenceable.</p>
+<p>If size() is 0, data() may or may not return a null pointer.</p>
+<p>
+For non-empty containers, the returned pointer compares equal to the address of the first element.</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also front, back, size </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Pointer to the underlying element storage</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">T</span> <span class="special">*</span> <a name="idm439837393888-bb"></a><span class="identifier">data</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Direct access to the underlying array. <p>Returns pointer to the underlying array serving as element storage.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+The pointer is such that range [data(); data() + size()) is always a valid range, even if the container is empty.</p>
+<p>When the container is empty, data() is not dereferenceable.</p>
+<p>If size() is 0, data() may or may not return a null pointer.</p>
+<p>
+For non-empty containers, the returned pointer compares equal to the address of the first element.</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also front, back, size </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Pointer to the underlying element storage</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">T</span> <span class="special">*</span> <a name="idm439837388128-bb"></a><span class="identifier">c_array</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Direct access to the underlying array. <p>Returns pointer to the underlying array serving as element storage.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+The pointer is such that range [data(); data() + size()) is always a valid range, even if the container is empty.</p>
+<p>When the container is empty, data() is not dereferenceable.</p>
+<p>If size() is 0, data() may or may not return a null pointer.</p>
+<p>This function is not available in <code class="computeroutput">std::array</code></p>
+<p>
+For non-empty containers, the returned pointer compares equal to the address of the first element.</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also front, back, size </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Pointer to the underlying element storage</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">void</span> <a name="idm439837381856-bb"></a><span class="identifier">assign</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span> value<span class="special">)</span><span class="special">;</span></pre>Assign one value to all elements. <p>This function assigns the same value to all arrays elements</p>
+<p><b>Complexity. </b></p>
+<p>
+Linear</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+This function is not available in <code class="computeroutput">std::array</code>.</p>
+<p>This function is a synonym for fill.</p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also operator=, fill </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>(none)</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">void</span> <a name="idm439837375872-bb"></a><span class="identifier">fill</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span> value<span class="special">)</span><span class="special">;</span></pre>Assign one value to all elements. <p>This function assigns the same value to all arrays elements</p>
+<p><b>Complexity. </b></p>
+<p>
+Linear</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+This function is not available in <code class="computeroutput">std::array</code></p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also operator= </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>(none)</p></td>
+</tr></tbody>
+</table></div>
+</li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idm543077066624"></a><h3>
+<a name="idm439837363536-bb"></a><code class="computeroutput">array</code> public static functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="identifier">size_type</span> <a name="idm439837363056-bb"></a><span class="identifier">size</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Member group: Capacity. <p>Returns the number of elements</p>
+<p>This function returns the number of elements in the container.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+<code class="computeroutput">size()</code> is equivalent to <code class="computeroutput">std::distance(begin(), end())</code></p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also empty, max_size </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>The number of elements in the container</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">bool</span> <a name="idm439837357200-bb"></a><span class="identifier">empty</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Checks whether the container is empty. <p>This function checks whether the container is empty</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+<code class="computeroutput">empty()</code> is equivalent to <code class="computeroutput">begin() == end()</code></p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also size, max_size </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p><code class="computeroutput">true</code> if the container is empty, <code class="computeroutput">false</code> otherwise</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="identifier">size_type</span> <a name="idm439837350960-bb"></a><span class="identifier">max_size</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Returns the maximum possible number of elements. <p>Returns the maximum number of elements the container is able to hold due to system or library implementation limitations</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+Because array&lt;T, N&gt; is a fixed-size container, the value returned by <code class="computeroutput">max_size()</code> is equivalent to <code class="computeroutput">size()</code></p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also size, empty </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>Maximum number of elements</p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">bool</span> <a name="idm439837345152-bb"></a><span class="identifier">rangecheck</span><span class="special">(</span><span class="identifier">size_type</span> i<span class="special">)</span><span class="special">;</span></pre>Member group: Check range. <p>Check range</p>
+<p>This function checks if i in the valid range for the array.</p>
+<p>This function may be private because it is static.</p>
+<p><b>Complexity. </b></p>
+<p>
+Constant</p>
+<p><b>Exception Safety. </b></p>
+<p>
+Throws <code class="computeroutput">std::out_of_range</code> if i is not in the valid range.</p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src=".././doc/src/images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p></p></td></tr>
+</table></div>
+<p>
+This function is not available in <code class="computeroutput">std::array</code></p>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p></p>
+<p>
+</p>
+<p>
+See Also size, empty </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>True if i is in the valid range for the array</p></td>
+</tr></tbody>
+</table></div>
+</li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><div class="copyright-footer">Copyright © 2001-2004 Nicolai
+      Josuttis<br>Copyright © 2012 Marshall Clow<p>
+        Distributed under the Boost Software License, Version 1.0. (See accompanying
+        file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt" target="_top">http://www.boost.org/LICENSE_1_0.txt</a>)
+      </p>
+</div></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../array/quickref.html"><img src=".././doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../array/quickref.html#header.boost.array_hpp"><img src=".././doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src=".././doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="operator__.html"><img src=".././doc/src/images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>
